@@ -15,7 +15,15 @@ app.get("/", function (req, res) {
   res.render("pages/index");
 });
 app.get("/candidate-profile", function (req, res) {
-  res.render("pages/index");
+  var userData = undefined;
+  if (req.query.userData) {
+    userData = req.query.userData;
+  } else {
+    userData = 1;
+  }
+  res.render("pages/index", {
+    userData: userData,
+  });
 });
 var server = app.listen(5300, function () {
   var port = server.address().port;

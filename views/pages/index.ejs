@@ -59,6 +59,13 @@
         <span class="left-prev-icon"> prev </span>
       </div>
 
+      <% if (userData){ %>
+      <script>
+        console.log("UserData", "<%= userData %>");
+        var dimensionValue = "<%= userData %>";
+        ga("set", "dimension1", dimensionValue);
+      </script>
+      <% } %>
       <!--Main Content-->
       <div
         id="main-content"
