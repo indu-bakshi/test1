@@ -14,7 +14,15 @@ app.use("/images", express.static(__dirname + "/public/images"));
 const port = process.env.PORT || 5300;
 
 app.get("/", function (req, res) {
-  res.send("use /candidate-profile");
+  var userData = undefined;
+  if (req.query.userData) {
+    userData = req.query.userData;
+  } else {
+    userData = 1;
+  }
+  res.render("pages/index", {
+    userData: userData,
+  });
 });
 app.get("/candidate-profile", function (req, res) {
   var userData = undefined;
