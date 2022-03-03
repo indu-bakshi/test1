@@ -11,6 +11,8 @@ app.use("/css", express.static(__dirname + "/public/css"));
 // app.use("/js", express.static(__dirname + "/public/js"));
 app.use("/images", express.static(__dirname + "/public/images"));
 
+const port = process.env.PORT || 5300;
+
 app.get("/", function (req, res) {
   res.send("use /candidate-profile");
 });
@@ -25,7 +27,7 @@ app.get("/candidate-profile", function (req, res) {
     userData: userData,
   });
 });
-var server = app.listen(5300, function () {
+var server = app.listen(port, function () {
   var port = server.address().port;
   console.log("Server started at http://localhost:%s", port);
 });
