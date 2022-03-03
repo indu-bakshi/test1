@@ -31,7 +31,6 @@
       );
 
       ga("create", "UA-221592716-1", "auto");
-      ga("send", "pageview");
     </script>
     <!-- End Google Analytics -->
     <!-- Bootstrap core CSS -->
@@ -63,7 +62,9 @@
       <script>
         console.log("UserData", "<%= userData %>");
         var dimensionValue = "<%= userData %>";
+        console.log("dimension value", dimensionValue);
         ga("set", "dimension1", dimensionValue);
+        ga("send", "pageview");
       </script>
       <% } %>
       <!--Main Content-->
