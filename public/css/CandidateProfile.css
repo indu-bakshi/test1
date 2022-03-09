@@ -85,7 +85,7 @@
 }
 
 /*Overview*/
-.overview {
+/* .overview {
   width: auto;
   height: auto;
   background-color: #ffffff;
@@ -278,11 +278,6 @@
   text-align: center;
 }
 
-/* .candidate-location img {
-   margin-left: 4px;
-    margin-bottom: 4px;
-} */
-
 .candidate-location .overview-label {
   width: 27%;
   color: #9ca3a9;
@@ -316,10 +311,6 @@
   text-align: center;
 }
 
-/* .candidate-notice img {
-    margin-left: 4px;
-    margin-bottom: 4px;
-} */
 
 .candidate-notice .overview-label {
   color: #9ca3a9;
@@ -354,10 +345,6 @@
   text-align: center;
 }
 
-/* .candidate-experience img {
-   margin-left: 4px;
-    margin-bottom: 4px;
-} */
 
 .candidate-experience .overview-label {
   color: #9ca3a9;
@@ -391,11 +378,6 @@
   height: 13px;
   text-align: center;
 }
-
-/* .candidate-compensation img {
-   margin-left: 4px;
-    margin-bottom: 4px;
-} */
 
 .candidate-compensation .overview-label {
   color: #9ca3a9;
@@ -544,9 +526,7 @@
   border-top: 1px solid #b0bec5;
 }
 
-.overview-rating {
-  display: flex;
-}
+
 
 .overview-keyskill {
   width: 100%;
@@ -560,12 +540,14 @@
   margin-right: 5px;
   color: #33475b;
 }
-
+*/
+.overview-rating {
+  display: flex;
+}
 .overview-rating img {
   width: 30.3px;
   height: 30.3px;
 }
-
 .overview-options {
   text-align: right;
   display: flex;
@@ -796,7 +778,6 @@
 .Questions-heading {
   width: 100%;
   padding-left: 30px;
-  margin-bottom: 45px;
   border-bottom: 1px solid #b0bec5;
 }
 
@@ -809,11 +790,11 @@
 .screening-questions {
   padding-left: 0;
   padding-bottom: 10px;
-  border-bottom: 5px solid #2164f4;
+  /* border-bottom: 5px solid #2164f4; */
 }
 
 .screening-questions span {
-  font-size: 21px;
+  font-size: 18px;
   font-weight: bold;
   color: #33475b;
   margin-left: 4px;
@@ -1845,4 +1826,59 @@ img:hover {
 .navigation-items a:hover {
   color: #33475b;
   text-decoration: none;
+}
+
+.lbtooptip-header {
+  /* width: 33.3333%; */
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  border-bottom: 1px solid #b3b3b3;
+  margin-bottom: 10px;
+}
+.lbtooltip-question {
+  color: #000;
+  font-weight: 600;
+  text-align: left;
+}
+.lbtooptip-header span {
+  font-size: 12px;
+}
+.lbtooltip-section {
+  padding: 10px;
+  background-color: #fff;
+  min-width: 500px;
+  text-align: left;
+}
+.lbtooltip-dot {
+  color: #2164f4;
+}
+.review-skills-strong .skills .selected {
+  background-color: #2164f4;
+  color: #fff;
+}
+.tooltip-inner {
+  background-color: #fff !important;
+}
+.tooltip {
+  background-color: #fff !important;
+}
+.tooltip.show {
+  opacity: 1;
+}
+.bs-tooltip-auto[x-placement^="bottom"] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+  border-bottom-color: #fff;
+}
+.lb-candidateDetails {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+.lb-candidateDetails div {
+  text-align: right;
+}
+#accordionCandidate {
+  width: 100%;
+  margin-right: 60px;
 }

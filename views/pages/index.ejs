@@ -34,10 +34,12 @@
     </script>
     <!-- End Google Analytics -->
     <!-- Bootstrap core CSS -->
+
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="css/CandidateProfile.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/candidateProfileNew.css" />
     <link href="css/index.css" rel="stylesheet" />
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -49,15 +51,6 @@
     <%- include('../partials/header.ejs') %>
     <!--Complete Page-->
     <div class="container-main">
-      <!--Left Controls-->
-      <div class="left-controls">
-        <span class="left-close-icon">
-          <img src="images/close-icon.svg" />
-        </span>
-        <span class="left-next-icon"> next </span>
-        <span class="left-prev-icon"> prev </span>
-      </div>
-
       <% if (userData){ %>
       <script>
         console.log("UserData", "<%= userData %>");
@@ -99,146 +92,314 @@
         <%- include('../partials/scrollup.ejs') %>
         <!--Dashboard-->
         <div class="row overview">
-          <!--Candidate Details-->
           <div class="row overview-details">
-            <div class="col-lg-2 p-0 overview-info-shortcuts">
+            <div class="col-lg-1 p-0 overview-info-shortcuts">
               <div class="display-picture">
                 <img
                   src="images/new-candidate-profile-display.png"
                   alt="User Image"
                 />
               </div>
-              <div class="social-links">
-                <span class="social-links-link--linkedIn">
-                  <img src="images/linkedin-icon.svg" alt="LinkedIn Icon" />
-                </span>
-                <span class="social-links-link--facebook">
-                  <img src="images/facebook-icon.svg" alt="Facebook Icon" />
-                </span>
-                <span class="social-links-link--twitter">
-                  <img src="images/twitter-icon.svg" alt="Twitter Icon" />
-                </span>
-              </div>
             </div>
             <div class="col-lg-10 p-0 overview-info-details">
               <h1 class="candidate-name">Vinayak Sahastrabuddhe</h1>
-              <div class="row candidate-contact">
-                <div class="col-lg-3 p-0 candidate-phone">
-                  <img src="images/smartphone-icon.svg" alt="Phone Icon" />
-                  <span>+91 9860 808569</span>
+              <div class="row candidate-contact mx-0">
+                <div class="col-lg-2 p-0 candidate-phone">
+                  <img src="images/smartphone-icon.svg" alt="Phone Icon" /><span
+                    >+91 7387146666</span
+                  >
                 </div>
-                <div class="col-lg-3 p-0 candidate-mail">
-                  <img src="images/email-icon.svg" alt="Mail Icon" />
-                  <span>vinayaksahastrabuddhe8865@gmail.com</span>
-                </div>
-              </div>
-
-              <div class="row mt-3 candidate-detailInfo">
-                <div class="col-lg-6 p-0 candidate-detailInfo-column--1">
-                  <div class="candidate-company">
-                    <span class="overview-label">Current Company</span>
-                    <span class="overview-value"
-                      >: Tata Consultancy Services Pvt. Ltd</span
-                    >
-                  </div>
-                  <div class="candidate-location">
-                    <span class="overview-label">Location</span>
-                    <span class="overview-value">: Bangalore</span>
-                    <span class="overview-btn">
-                      <span class="overview-btn-icon">
-                        <img src="images/check-icon.svg" />
-                      </span>
-                      <span class="overview-btn-label">Ready to relocate</span>
-                    </span>
-                  </div>
-                  <div class="candidate-experience">
-                    <span class="overview-label">Total Exp</span>
-                    <span class="overview-value">: 6 Years, 5 months</span>
-                    <span class="overview-btn">
-                      <span class="overview-btn-icon">
-                        <img src="images/cross-icon.svg" alt="Cross Icon" />
-                      </span>
-                      <span class="overview-btn-label">Less Experienced</span>
-                    </span>
-                  </div>
-                </div>
-                <div class="col-lg-6 candidate-detailInfo-column--2">
-                  <div class="candidate-jobTitle">
-                    <span class="overview-label">Job Title</span>
-                    <span class="overview-value">: UI/UX Developer</span>
-                  </div>
-                  <div class="candidate-notice">
-                    <span class="overview-label">Notice Period</span>
-                    <span class="overview-value">: 30 Days</span>
-                    <span class="overview-btn">
-                      <span class="overview-btn-icon">
-                        <img src="images/check-icon.svg" alt="Check Icon" />
-                      </span>
-                      <span class="overview-btn-label">Acceptable</span>
-                    </span>
-                  </div>
-                  <div class="candidate-compensation">
-                    <span class="overview-label">Current Compensation</span>
-                    <span class="overview-value">: ₹ 900,000 / year</span>
-                    <span class="overview-btn">
-                      <span class="overview-btn-icon">
-                        <img src="images/cross-icon.svg" alt="Cross Icon" />
-                      </span>
-                      <span class="overview-btn-label"
-                        >Doesn’t meet salary reqs.</span
-                      >
-                    </span>
-                  </div>
-                  <div class="candidate-hike">
-                    <span class="overview-label">Expected Hike</span>
-                    <span class="overview-value">: 30%</span>
-                  </div>
+                <div class="col-lg-3 ml-2 p-0 candidate-mail">
+                  <img src="images/email-icon.svg" alt="Mail Icon" /><span
+                    >khabdi1232csc@gmail.com</span
+                  >
                 </div>
               </div>
+            </div>
+            <div class="col-lg-1 p-0 social-links">
+              <span class="social-links-link--linkedIn">
+                <img src="images/linkedin-icon.svg" alt="LinkedIn Icon" />
+              </span>
+              <span class="social-links-link--facebook">
+                <img src="images/facebook-icon.svg" alt="Facebook Icon" />
+              </span>
+              <span class="social-links-link--twitter">
+                <img src="images/twitter-icon.svg" alt="Twitter Icon" />
+              </span>
             </div>
           </div>
           <div class="row overview-actions">
-            <div class="overview-actions-item--addNote">
-              <img src="images/comment-icon.svg" alt="Comment Icon" />
-              <span class="overview-actions-btn">Add Note</span>
+            <div class="overview-actions-item">
+              <img src="images/comment-icon.svg" alt="Comment Icon" /><span
+                class="overview-actions-btn"
+                >Add Note</span
+              >
             </div>
-            <div class="overview-actions-item--setUpInterview">
-              <img src="images/invitation-icon.svg" alt="Invite Icon" />
-              <span class="overview-actions-btn">Set Up Interview</span>
+            <div class="overview-actions-item fade-tab">
+              <img src="images/invitation-icon.svg" alt="Invite Icon" /><span
+                class="overview-actions-btn"
+                >Set Up Interview</span
+              >
             </div>
-            <div class="overview-actions-item--shareProfile">
-              <img src="images/share-icon.svg" alt="Share Icon" />
-              <span class="overview-actions-btn">Share Profile</span>
+            <div class="overview-actions-item">
+              <img src="images/share-icon.svg" alt="Share Icon" /><span
+                class="overview-actions-btn"
+                >Share Profile</span
+              >
             </div>
-            <div class="overview-actions-item--downloadProfile">
-              <img src="images/download-icon.svg" alt="Download Icon" />
-              <span class="overview-actions-btn">Download Profile</span>
+            <div class="overview-actions-item">
+              <span class="overview-actions-btn" style="margin-left: -7px"
+                ><button>
+                  <img src="images/download-icon.svg" alt="Download Icon" />
+                  Download Profile
+                </button></span
+              >
             </div>
-            <div class="overview-actions-item--moveTo">
+            <div
+              class="overview-actions-item"
+              style="margin-left: auto; margin-right: 0px"
+            >
               <img
                 class="blue-icon"
                 src="images/arrow-forward-blue.svg"
                 alt="Move To Icon"
-              />
-              <span class="overview-actions-btn">Move To</span>
-              <img
+              /><span class="overview-actions-btn middle-btn">Move To</span
+              ><img
                 class="expand-icon"
                 src="images/expand-icon.svg"
                 alt="Expand Icon"
               />
             </div>
-            <div class="overview-actions-item--notAFit">
-              <img
-                class="blue-icon"
-                src="images/like-blue.svg"
-                alt="Not A Fit Icon"
-              />
-              <span class="overview-actions-btn">Not a Fit</span>
-              <img
-                class="expand-icon"
-                src="images/expand-icon.svg"
-                alt="Expand Icon"
-              />
+          </div>
+          <div
+            class="accordion md-accordion"
+            id="accordionCandidate"
+            role="tablist"
+            aria-multiselectable="true"
+          >
+            <div class="row mt-3 candidate-detail-container">
+              <div class="lb-candidateDetails">
+                <span class="col-lg-6 p-0 candidate-detail-heading"
+                  >Candidate Details</span
+                >
+                <div
+                  class="col-lg-6 m-0 p-0 lb-collapse"
+                  data-bs-toggle="collapse"
+                  data-parent="#accordionCandidate"
+                  href="#collapseCandidate"
+                  aria-expanded="false"
+                  aria-controls="collapseCandidate"
+                >
+                  <img src="images/expand-icon.svg" alt="Collapse-icon" />
+                </div>
+              </div>
+
+              <div class="col-lg-6 p-0"></div>
+              <div class="row mt-3 detail__container">
+                <div class="col-lg-6 p-0 detail__left__section">
+                  <div class="row left__section__row">
+                    <div class="col-lg-4 left__section__question">
+                      Current Company
+                    </div>
+                    <div class="col-lg-8 left__section__answer">
+                      <div>Boubyan Bank</div>
+                    </div>
+                  </div>
+                  <div class="row left__section__row">
+                    <div class="col-lg-4 left__section__question">
+                      Job Title
+                    </div>
+                    <div class="col-lg-8 left__section__answer">
+                      <div>Solution Architect</div>
+                    </div>
+                  </div>
+                  <div class="row left__section__row">
+                    <div class="col-lg-4 left__section__question">
+                      Total Experience
+                    </div>
+                    <div class="col-lg-8 left__section__answer">
+                      <div class="candidate-experience">
+                        12-15 years<span class="overview-btn-green overview-btn"
+                          ><span
+                            class="overview-btn-icon-green overview-btn-icon"
+                            ><img
+                              src="images/check-icon.svg"
+                              alt="Icon" /></span
+                          ><span class="overview-btn-label"
+                            >Experience Matches</span
+                          ></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row left__section__row">
+                    <div class="col-lg-4 left__section__question">
+                      Notice Period
+                    </div>
+                    <div class="col-lg-8 left__section__answer">
+                      <div class="candidate-notice">
+                        90 Days<span class="overview-btn overview-btn-green"
+                          ><span
+                            class="overview-btn-icon overview-btn-icon-green"
+                            ><img
+                              src="images/check-icon.svg"
+                              alt="Check Icon" /></span
+                          ><span class="overview-btn-label"
+                            >Matches Job Req</span
+                          ></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="collapseCandidate"
+                    id="collapseCandidate"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="headingOne1"
+                    data-parent="#accordionCandidate"
+                  >
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Exp in Current Org
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Remote Working
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Team Size (Direct)
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Team Size (Indirect)
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Notice Period Buyout
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Required Docs
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">Shifts</div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">
+                        Current Shifts
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 p-0 detail__right__section">
+                  <div class="row right__section__row">
+                    <div class="col-lg-4 right__section__question">
+                      Location
+                    </div>
+                    <div class="col-lg-8 right__section__answer">
+                      <div>Delhi</div>
+                    </div>
+                  </div>
+                  <div class="row right__section__row">
+                    <div class="col-lg-4 right__section__question">
+                      Current Salary
+                    </div>
+                    <div class="col-lg-8 right__section__answer">
+                      <div class="candidate-compensation">INR 50.00 L</div>
+                      <div class="candidate-compensation">
+                        50.00<span class="overview-btn-red overview-btn"
+                          ><span class="overview-btn-icon-red overview-btn-icon"
+                            ><img
+                              src="images/cross-icon.svg"
+                              alt="Cross Icon" /></span
+                          ><span class="overview-btn-label"
+                            >More than Job range</span
+                          ></span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row right__section__row">
+                    <div class="col-lg-4 right__section__question">
+                      Expected Salary
+                    </div>
+                    <div class="col-lg-8 right__section__answer">
+                      <div class="candidate-compensation">INR 50.00 L</div>
+                      <div>50.00</div>
+                    </div>
+                  </div>
+                  <div class="row right__section__row">
+                    <div class="col-lg-4 right__section__question">
+                      Education
+                    </div>
+                    <div class="col-lg-8 right__section__answer">
+                      <div>Master’s</div>
+                    </div>
+                  </div>
+                  <div
+                    id="collapseCandidate"
+                    class="collapse"
+                    role="tabpanel"
+                    aria-labelledby="headingOne1"
+                    data-parent="#accordionCandidate"
+                  >
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Domain
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Reason for job change
+                      </div>
+                    </div>
+
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Relocation
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Start Date
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Other Offers
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Interview
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Languages
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Travel
+                      </div>
+                    </div>
+                    <div class="row right__section__row">
+                      <div class="col-lg-4 right__section__question">
+                        Contract
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <!--Candidate Review-->
@@ -272,10 +433,6 @@
                   alt="star-icon"
                 />
               </div>
-            </div>
-            <div class="col-lg-6 m-0 p-0 overview-options">
-              <span>Collapse</span>
-              <img src="images/collapse-icon.svg" alt="Collapse-icon" />
             </div>
             <div class="overview-review-message">
               <span>(based on resume)</span>
@@ -378,16 +535,120 @@
               <span class="heatmap-header-column--block"> Front end </span>
             </div>
             <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks less">
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Type of Web App</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which type of Web Solutions have you developed?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Static Webpage</span>
+                      <span class='skill'>Single Page Application (SPA)</span>
+                      <span class='skill selected'
+                        >Dynamic Web App with Server side components</span
+                      >
+                      <span class='skill'>Javascript Plugin</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
                 Type of website
               </span>
-              <span class="heatmap-header-column--blocks strong">
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Development techniques</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following techniques have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Responsive Design</span>
+                      <span class='skill'>Progressive Enhancement</span>
+                      <span class='skill selected'
+                        >Graceful Degradation</span
+                      >
+                      <span class='skill'>Mobile First</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
                 Development techniques
               </span>
-              <span class="heatmap-header-column--blocks strong">
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Security</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which type of Web Solutions have you developed?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Static Webpage</span>
+                      <span class='skill'>Single Page Application (SPA)</span>
+                      <span class='skill selected'
+                        >Dynamic Web App with Server side components</span
+                      >
+                      <span class='skill'>Javascript Plugin</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
                 Security
               </span>
-              <span class="heatmap-header-column--blocks strong">
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Accessibility</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which type of Web Solutions have you developed?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Static Webpage</span>
+                      <span class='skill'>Single Page Application (SPA)</span>
+                      <span class='skill selected'
+                        >Dynamic Web App with Server side components</span
+                      >
+                      <span class='skill'>Javascript Plugin</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
                 Accessibility
               </span>
             </div>
@@ -396,7 +657,7 @@
             <div class="heatmap-columns--categories">
               <span class="heatmap-header-column--block"> Javascript </span>
             </div>
-            <div class="heatmap-columns--skills" style="flex-wrap: wrap">
+            <div class="heatmap-columns--skills">
               <span class="heatmap-header-column--blocks strong">
                 Variation
               </span>
@@ -410,7 +671,6 @@
                 Frameworks
               </span>
               <span class="heatmap-header-column--blocks strong"> Engine </span>
-              <span class="heatmap-header-column--blocks good"> Events </span>
             </div>
           </div>
           <div class="row m-0 heatmap-columns">
@@ -517,191 +777,440 @@
         </div>
 
         <!--Questions-->
-        <div class="row Questions" id="screening-id">
-          <div class="Questions-heading">
-            <div class="row m-0 question-categories">
-              <div class="col-lg-3 m-0 screening-questions">
-                <span>Job Screening Questions (20)</span>
+        <div
+          class="accordion md-accordion"
+          id="accordionEx"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <div class="row Questions" id="screening-id">
+            <div class="Questions-heading">
+              <div
+                class="row m-0 question-categories"
+                data-bs-toggle="collapse"
+                data-parent="#accordionEx"
+                href="#collapseOne1"
+                aria-expanded="true"
+                aria-controls="collapseOne1"
+              >
+                <div class="col-lg-6 m-0 screening-questions">
+                  <span>Job Screening Questions (20)</span>
+                </div>
+                <div class="col-lg-6 m-0 p-0 lb-collapse">
+                  <img src="images/collapse-icon.svg" alt="Collapse-icon" />
+                </div>
               </div>
-              <div class="col-lg-3 m-0 hr-questions">
-                <span>HR Screening Questions (10)</span>
+
+              <div></div>
+            </div>
+
+            <div
+              id="collapseOne1"
+              class="collapse"
+              role="tabpanel"
+              aria-labelledby="headingOne1"
+              data-parent="#accordionEx"
+            >
+              <div class="row column-definitions">
+                <div class="col-lg-7 p-0 column-question">
+                  <span class="column-question-heading">Questions</span>
+                </div>
+                <div class="col-lg-5 p-0 column-answer">
+                  <span class="column-answer-heading">Answers</span>
+                </div>
               </div>
-              <div class="col-lg-3 m-0 custom-questions">
-                <span>Custom Questions (2)</span>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  1.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  2. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  3. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions"> 4. Do you lead a team? </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  5. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  6.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  7. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  8. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions"> 9. Do you lead a team? </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  10. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  11.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  12. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  13. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  14. Do you lead a team?
+                </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  15. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  16.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  17. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  18. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  19. Do you lead a team?
+                </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  20. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
               </div>
             </div>
           </div>
-          <div class="row column-definitions">
-            <div class="col-lg-7 p-0 column-question">
-              <span class="column-question-heading">Questions</span>
+        </div>
+
+        <!--Questions-->
+        <div
+          class="accordion md-accordion"
+          id="accordionEx"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <div class="row Questions" id="screening-id">
+            <div class="Questions-heading">
+              <div
+                class="row m-0 question-categories"
+                data-bs-toggle="collapse"
+                data-parent="#accordionEx"
+                href="#collapse2"
+                aria-expanded="true"
+                aria-controls="collapse2"
+              >
+                <div class="col-lg-6 m-0 screening-questions">
+                  <span>HR Screening Questions (10)</span>
+                </div>
+                <div class="col-lg-6 m-0 p-0 lb-collapse">
+                  <img src="images/collapse-icon.svg" alt="Collapse-icon" />
+                </div>
+              </div>
+
+              <div></div>
             </div>
-            <div class="col-lg-5 p-0 column-answer">
-              <span class="column-answer-heading">Answers</span>
+            <!-- put class collapse show down below for accordian to show data -->
+            <div
+              id="collapse2"
+              class="collapse"
+              role="tabpanel"
+              aria-labelledby="headingOne1"
+              data-parent="#accordionEx"
+            >
+              <div class="row column-definitions">
+                <div class="col-lg-7 p-0 column-question">
+                  <span class="column-question-heading">Questions</span>
+                </div>
+                <div class="col-lg-5 p-0 column-answer">
+                  <span class="column-answer-heading">Answers</span>
+                </div>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  1.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  2. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  3. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions"> 4. Do you lead a team? </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  5. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  6.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  7. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  8. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions"> 9. Do you lead a team? </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  10. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  11.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  12. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  13. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  14. Do you lead a team?
+                </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  15. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  16.Which City are you currently based in?
+                </span>
+                <span class="col-lg-5 answers"> Bangalore </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  17. What is the Official Notice Period you are required to
+                  serve in your current company?
+                </span>
+                <span class="col-lg-5 answers"> 30 Days </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  18. If an opportunity to work with a great company came along,
+                  would you be willing to work on Contract?
+                </span>
+                <span class="col-lg-5 answers"> No </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  19. Do you lead a team?
+                </span>
+                <span class="col-lg-5 answers">
+                  Small size team (1-3 people), Small size team (7-10 people),
+                  Large size team (10-50 people)
+                </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  20. What is your favourite language and why?
+                </span>
+                <span class="col-lg-5 answers">
+                  Full Stack Web Developers work with a multitude of languages.
+                  Having just one loved coding language might be an alarm
+                  signal. Ideally, a candidate must have a few languages that he
+                  loves, preferably, some with which he can design the front end
+                  and others with which he can take care of the back end. A
+                  candidate should be able to demonstrate that well and remember
+                  to include the basic most used ones like HTML, CSS, Python
+                  etc.
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              1.Which City are you currently based in?
-            </span>
-            <span class="col-lg-5 answers"> Bangalore </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              2. What is the Official Notice Period you are required to serve in
-              your current company?
-            </span>
-            <span class="col-lg-5 answers"> 30 Days </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              3. If an opportunity to work with a great company came along,
-              would you be willing to work on Contract?
-            </span>
-            <span class="col-lg-5 answers"> No </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions"> 4. Do you lead a team? </span>
-            <span class="col-lg-5 answers">
-              Small size team (1-3 people), Small size team (7-10 people), Large
-              size team (10-50 people)
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              5. What is your favourite language and why?
-            </span>
-            <span class="col-lg-5 answers">
-              Full Stack Web Developers work with a multitude of languages.
-              Having just one loved coding language might be an alarm signal.
-              Ideally, a candidate must have a few languages that he loves,
-              preferably, some with which he can design the front end and others
-              with which he can take care of the back end. A candidate should be
-              able to demonstrate that well and remember to include the basic
-              most used ones like HTML, CSS, Python etc.
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              6.Which City are you currently based in?
-            </span>
-            <span class="col-lg-5 answers"> Bangalore </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              7. What is the Official Notice Period you are required to serve in
-              your current company?
-            </span>
-            <span class="col-lg-5 answers"> 30 Days </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              8. If an opportunity to work with a great company came along,
-              would you be willing to work on Contract?
-            </span>
-            <span class="col-lg-5 answers"> No </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions"> 9. Do you lead a team? </span>
-            <span class="col-lg-5 answers">
-              Small size team (1-3 people), Small size team (7-10 people), Large
-              size team (10-50 people)
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              10. What is your favourite language and why?
-            </span>
-            <span class="col-lg-5 answers">
-              Full Stack Web Developers work with a multitude of languages.
-              Having just one loved coding language might be an alarm signal.
-              Ideally, a candidate must have a few languages that he loves,
-              preferably, some with which he can design the front end and others
-              with which he can take care of the back end. A candidate should be
-              able to demonstrate that well and remember to include the basic
-              most used ones like HTML, CSS, Python etc.
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              11.Which City are you currently based in?
-            </span>
-            <span class="col-lg-5 answers"> Bangalore </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              12. What is the Official Notice Period you are required to serve
-              in your current company?
-            </span>
-            <span class="col-lg-5 answers"> 30 Days </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              13. If an opportunity to work with a great company came along,
-              would you be willing to work on Contract?
-            </span>
-            <span class="col-lg-5 answers"> No </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions"> 14. Do you lead a team? </span>
-            <span class="col-lg-5 answers">
-              Small size team (1-3 people), Small size team (7-10 people), Large
-              size team (10-50 people)
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              15. What is your favourite language and why?
-            </span>
-            <span class="col-lg-5 answers">
-              Full Stack Web Developers work with a multitude of languages.
-              Having just one loved coding language might be an alarm signal.
-              Ideally, a candidate must have a few languages that he loves,
-              preferably, some with which he can design the front end and others
-              with which he can take care of the back end. A candidate should be
-              able to demonstrate that well and remember to include the basic
-              most used ones like HTML, CSS, Python etc.
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              16.Which City are you currently based in?
-            </span>
-            <span class="col-lg-5 answers"> Bangalore </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              17. What is the Official Notice Period you are required to serve
-              in your current company?
-            </span>
-            <span class="col-lg-5 answers"> 30 Days </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              18. If an opportunity to work with a great company came along,
-              would you be willing to work on Contract?
-            </span>
-            <span class="col-lg-5 answers"> No </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions"> 19. Do you lead a team? </span>
-            <span class="col-lg-5 answers">
-              Small size team (1-3 people), Small size team (7-10 people), Large
-              size team (10-50 people)
-            </span>
-          </div>
-          <div class="row column-definitions">
-            <span class="col-lg-7 questions">
-              20. What is your favourite language and why?
-            </span>
-            <span class="col-lg-5 answers">
-              Full Stack Web Developers work with a multitude of languages.
-              Having just one loved coding language might be an alarm signal.
-              Ideally, a candidate must have a few languages that he loves,
-              preferably, some with which he can design the front end and others
-              with which he can take care of the back end. A candidate should be
-              able to demonstrate that well and remember to include the basic
-              most used ones like HTML, CSS, Python etc.
-            </span>
           </div>
         </div>
 
@@ -916,6 +1425,19 @@
         </div>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const tooltip = document.querySelectorAll(".lbtooltip");
+      tooltip.forEach((t) => {
+        new bootstrap.Tooltip(t);
+      });
+    </script>
+
     <script src="js/button.js"></script>
   </body>
 </html>
