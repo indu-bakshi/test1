@@ -15,6 +15,7 @@ const port = process.env.PORT || 5300;
 
 app.get("/", function (req, res) {
   var userData = undefined;
+  var company = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
@@ -29,6 +30,7 @@ app.get("/", function (req, res) {
 });
 app.get("/candidate-profile", function (req, res) {
   var userData = undefined;
+  var company = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
