@@ -52,13 +52,17 @@
       <script>
         console.log("UserData", "<%= userData %>");
         console.log("Company", "<%= company %>");
+        console.log("TempId", "<%= tempid %>");
         var dimensionValue1 = "<%= userData %>";
         var dimensionValue2 = "<%= company %>";
+        var dimensionValue3 = "<%= tempid%>";
 
         console.log("dimension value1", dimensionValue1);
         console.log("dimension value2", dimensionValue2);
+        console.log("dimension value3", dimensionValue3);
         ga("set", "dimension1", dimensionValue1);
         ga("set", "dimension2", dimensionValue2);
+        ga("set", "dimension3", dimensionValue3);
         ga("send", "pageview");
       </script>
       <% } %>

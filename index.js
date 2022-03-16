@@ -16,31 +16,39 @@ const port = process.env.PORT || 5300;
 app.get("/", function (req, res) {
   var userData = undefined;
   var company = undefined;
+  var tempid = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
+    tempid = req.query.tempid;
   } else {
     userData = 1;
     company = 1;
+    tempid = -1;
   }
   res.render("pages/index", {
     userData: userData,
     company: company,
+    tempid: tempid,
   });
 });
 app.get("/candidate-profile", function (req, res) {
   var userData = undefined;
   var company = undefined;
+  var tempid = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
+    tempid = req.query.tempid;
   } else {
     userData = 1;
     company = 1;
+    tempid = -1;
   }
   res.render("pages/index", {
     userData: userData,
     company: company,
+    tempid: tempid,
   });
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));
