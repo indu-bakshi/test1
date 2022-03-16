@@ -711,7 +711,7 @@
 
 .heatmap-columns--categories {
   width: 18.5%;
-  height: -webkit-fill-available;
+  height: -webkit-fit-content;
   border-right: 1px solid #ffffff;
   display: flex;
 }
