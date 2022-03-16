@@ -221,6 +221,7 @@
                     src="images/expand-icon.svg"
                     alt="Collapse-icon"
                     class="drop-icon"
+                    id="drop-img2"
                   />
                 </div>
               </div>
@@ -1992,24 +1993,28 @@
         });
       });
       $(".screening-questions").click(function () {
-        $(".drop-icon").toggleClass("down");
+        $("#drop-img").toggleClass("down");
       });
 
       $(".drop-icon").click(function () {
         $(this).toggleClass("down");
       });
-      $(".lb-collapse").click(function () {
-        $(".drop-icon").toggleClass("down");
+      $("#collapse-id").click(function () {
+        $("#drop-img").toggleClass("down");
       });
       $("#drop-img").click(function () {
-        $(".drop-icon").toggleClass("down");
+        $("#drop-img").toggleClass("down");
       });
       $("#see-more-parent").click(function () {
         $("#see-more").toggle();
+        $("#drop-img2").toggleClass("down");
+      });
+      $("#drop-img2").click(function () {
+        $("#drop-img2").toggleClass("down");
       });
       $("#see-more").click(function () {
         $("#see-more").toggle();
-        $(".drop-icon").toggleClass("down");
+        $("#drop-img2").toggleClass("down");
       });
     </script>
 
