@@ -17,22 +17,28 @@ app.get("/", function (req, res) {
   var userData = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
+    company = req.query.company;
   } else {
     userData = 1;
+    company = 1;
   }
   res.render("pages/index", {
     userData: userData,
+    company: company,
   });
 });
 app.get("/candidate-profile", function (req, res) {
   var userData = undefined;
   if (req.query.userData) {
     userData = req.query.userData;
+    company = req.query.company;
   } else {
     userData = 1;
+    company = 1;
   }
   res.render("pages/index", {
     userData: userData,
+    company: company,
   });
 });
 app.listen(port, () => console.log(`Listening on port ${port}`));

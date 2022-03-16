@@ -1846,6 +1846,7 @@ img:hover {
 }
 .lbtooltip-section {
   padding: 10px;
+  padding-bottom: 15px;
   background-color: #fff;
   min-width: 500px;
   text-align: left;
@@ -1859,12 +1860,16 @@ img:hover {
 }
 .tooltip-inner {
   background-color: #fff !important;
+  padding: 0;
 }
 .tooltip {
   background-color: #fff !important;
 }
 .tooltip.show {
   opacity: 1;
+}
+.bs-tooltip-bottom {
+  padding: 0;
 }
 .bs-tooltip-auto[x-placement^="bottom"] .arrow::before,
 .bs-tooltip-bottom .arrow::before {
@@ -1881,4 +1886,33 @@ img:hover {
 #accordionCandidate {
   width: 100%;
   margin-right: 60px;
+}
+.popover-header {
+  background-color: #33475b;
+  color: #fff;
+  font-size: 15px;
+}
+.drop-icon {
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.drop-icon.down {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+#see-more {
+  text-align: end;
+  color: #0000ee;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#see-more.clicked {
+  display: none;
+}
+#see-more.clicked-show {
+  display: block;
 }

@@ -2,11 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
+    <meta name="viewport" content="width=1200" />
+    <!-- shrink-to-fit=no,initial-scale=1 add in content for zoomed content  -->
     <title>LB Candidate Profile</title>
     <!-- Google Analytics -->
     <script>
@@ -54,9 +51,14 @@
       <% if (userData){ %>
       <script>
         console.log("UserData", "<%= userData %>");
-        var dimensionValue = "<%= userData %>";
-        console.log("dimension value", dimensionValue);
-        ga("set", "dimension1", dimensionValue);
+        console.log("Company", "<%= company %>");
+        var dimensionValue1 = "<%= userData %>";
+        var dimensionValue2 = "<%= company %>";
+
+        console.log("dimension value1", dimensionValue1);
+        console.log("dimension value2", dimensionValue2);
+        ga("set", "dimension1", dimensionValue1);
+        ga("set", "dimension2", dimensionValue2);
         ga("send", "pageview");
       </script>
       <% } %>
@@ -102,16 +104,16 @@
               </div>
             </div>
             <div class="col-lg-10 p-0 overview-info-details">
-              <h1 class="candidate-name">Vinayak Sahastrabuddhe</h1>
+              <h1 class="candidate-name">Rahul Jha</h1>
               <div class="row candidate-contact mx-0">
                 <div class="col-lg-2 p-0 candidate-phone">
                   <img src="images/smartphone-icon.svg" alt="Phone Icon" /><span
-                    >+91 7387146666</span
+                    >+91 86XXXXXXX6</span
                   >
                 </div>
                 <div class="col-lg-3 ml-2 p-0 candidate-mail">
                   <img src="images/email-icon.svg" alt="Mail Icon" /><span
-                    >khabdi1232csc@gmail.com</span
+                    >ra******14@gmail.com</span
                   >
                 </div>
               </div>
@@ -130,29 +132,46 @@
           </div>
           <div class="row overview-actions">
             <div class="overview-actions-item">
-              <img src="images/comment-icon.svg" alt="Comment Icon" /><span
-                class="overview-actions-btn"
-                >Add Note</span
-              >
-            </div>
-            <div class="overview-actions-item fade-tab">
-              <img src="images/invitation-icon.svg" alt="Invite Icon" /><span
-                class="overview-actions-btn"
-                >Set Up Interview</span
-              >
-            </div>
-            <div class="overview-actions-item">
-              <img src="images/share-icon.svg" alt="Share Icon" /><span
-                class="overview-actions-btn"
-                >Share Profile</span
+              <img src="images/comment-icon.svg" alt="Comment Icon" />
+
+              <a
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="top"
+                title="Add Note"
+                data-bs-content="It allows the recruiter to add notes about the candidate."
+                ><span class="overview-actions-btn">Add Note</span></a
               >
             </div>
             <div class="overview-actions-item">
-              <span class="overview-actions-btn" style="margin-left: -7px"
-                ><button>
-                  <img src="images/download-icon.svg" alt="Download Icon" />
-                  Download Profile
-                </button></span
+              <img src="images/invitation-icon.svg" alt="Invite Icon" /><a
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Set Up Interview"
+                data-bs-content="You can schedule an interview by clicking on this."
+                ><span class="overview-actions-btn">Set Up Interview</span></a
+              >
+            </div>
+            <div class="overview-actions-item">
+              <img src="images/share-icon.svg" alt="Share Icon" /><a
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Share Profile"
+                data-bs-content="It is used to share profile."
+                ><span class="overview-actions-btn">Share Profile</span></a
+              >
+            </div>
+            <div class="overview-actions-item">
+              <img src="images/download-icon.svg" alt="Download Icon" />
+              <a
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Download Profile"
+                data-bs-content="It is used to download profile"
+                ><span class="overview-actions-btn">Download Profile</span></a
               >
             </div>
             <div
@@ -163,7 +182,14 @@
                 class="blue-icon"
                 src="images/arrow-forward-blue.svg"
                 alt="Move To Icon"
-              /><span class="overview-actions-btn middle-btn">Move To</span
+              /><a
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="bottom"
+                title="Move To"
+                data-bs-content="It allows you to move the candidate from one stage to another.
+              Eg. Screening to Interview"
+                ><span class="overview-actions-btn middle-btn">Move To</span></a
               ><img
                 class="expand-icon"
                 src="images/expand-icon.svg"
@@ -189,8 +215,13 @@
                   href="#collapseCandidate"
                   aria-expanded="false"
                   aria-controls="collapseCandidate"
+                  id="see-more-parent"
                 >
-                  <img src="images/expand-icon.svg" alt="Collapse-icon" />
+                  <img
+                    src="images/expand-icon.svg"
+                    alt="Collapse-icon"
+                    class="drop-icon"
+                  />
                 </div>
               </div>
 
@@ -202,7 +233,7 @@
                       Current Company
                     </div>
                     <div class="col-lg-8 left__section__answer">
-                      <div>Boubyan Bank</div>
+                      <div>Capgemini</div>
                     </div>
                   </div>
                   <div class="row left__section__row">
@@ -210,7 +241,7 @@
                       Job Title
                     </div>
                     <div class="col-lg-8 left__section__answer">
-                      <div>Solution Architect</div>
+                      <div>Full Stack Developer</div>
                     </div>
                   </div>
                   <div class="row left__section__row">
@@ -219,7 +250,7 @@
                     </div>
                     <div class="col-lg-8 left__section__answer">
                       <div class="candidate-experience">
-                        12-15 years<span class="overview-btn-green overview-btn"
+                        5-8 years<span class="overview-btn-green overview-btn"
                           ><span
                             class="overview-btn-icon-green overview-btn-icon"
                             ><img
@@ -238,7 +269,7 @@
                     </div>
                     <div class="col-lg-8 left__section__answer">
                       <div class="candidate-notice">
-                        90 Days<span class="overview-btn overview-btn-green"
+                        60 Days<span class="overview-btn overview-btn-green"
                           ><span
                             class="overview-btn-icon overview-btn-icon-green"
                             ><img
@@ -263,38 +294,74 @@
                       <div class="col-lg-4 left__section__question">
                         Exp in Current Org
                       </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>2-3 years</div>
+                      </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Remote Working
+                      </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>Yes</div>
                       </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Team Size (Direct)
                       </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>Medium size team (4-6 people)</div>
+                      </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Team Size (Indirect)
+                      </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>11-25</div>
                       </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Notice Period Buyout
                       </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>I wish not to answer</div>
+                      </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Required Docs
                       </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>-PAN Card,Aadhar Card,Address Proof</div>
+                      </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">Shifts</div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>
+                          No shifts, I want to work regular day timings (9:00 AM
+                          – 6:00 PM)
+                        </div>
+                      </div>
                     </div>
                     <div class="row left__section__row">
                       <div class="col-lg-4 left__section__question">
                         Current Shifts
+                      </div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>
+                          No shifts, I work regular day timings (9:00 AM – 6:00
+                          PM)
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row left__section__row">
+                      <div class="col-lg-4 left__section__question">Gender</div>
+                      <div class="col-lg-8 left__section__answer">
+                        <div>Male</div>
                       </div>
                     </div>
                   </div>
@@ -305,7 +372,7 @@
                       Location
                     </div>
                     <div class="col-lg-8 right__section__answer">
-                      <div>Delhi</div>
+                      <div>Bangalore HQ</div>
                     </div>
                   </div>
                   <div class="row right__section__row">
@@ -313,9 +380,9 @@
                       Current Salary
                     </div>
                     <div class="col-lg-8 right__section__answer">
-                      <div class="candidate-compensation">INR 50.00 L</div>
+                      <div class="candidate-compensation">INR 13.22 L</div>
                       <div class="candidate-compensation">
-                        50.00<span class="overview-btn-red overview-btn"
+                        13.22<span class="overview-btn-red overview-btn"
                           ><span class="overview-btn-icon-red overview-btn-icon"
                             ><img
                               src="images/cross-icon.svg"
@@ -332,8 +399,8 @@
                       Expected Salary
                     </div>
                     <div class="col-lg-8 right__section__answer">
-                      <div class="candidate-compensation">INR 50.00 L</div>
-                      <div>50.00</div>
+                      <div class="candidate-compensation">INR 18.00 L</div>
+                      <div>18.00</div>
                     </div>
                   </div>
                   <div class="row right__section__row">
@@ -341,8 +408,19 @@
                       Education
                     </div>
                     <div class="col-lg-8 right__section__answer">
-                      <div>Master’s</div>
+                      <div>M.E Computers</div>
                     </div>
+                  </div>
+                  <div
+                    class="float-end lb-collapse"
+                    data-bs-toggle="collapse"
+                    data-parent="#accordionCandidate"
+                    href="#collapseCandidate"
+                    aria-expanded="false"
+                    aria-controls="collapseCandidate"
+                    id="see-more"
+                  >
+                    <a>See More</a>
                   </div>
                   <div
                     id="collapseCandidate"
@@ -355,10 +433,19 @@
                       <div class="col-lg-4 right__section__question">
                         Domain
                       </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>
+                          -Engineering / Manufacturing,Hi-Tech,Professional
+                          Services
+                        </div>
+                      </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Reason for job change
+                      </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>-Want to work in a different project,Other</div>
                       </div>
                     </div>
 
@@ -366,35 +453,56 @@
                       <div class="col-lg-4 right__section__question">
                         Relocation
                       </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>Yes, I would relocate to Pune</div>
+                      </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Start Date
+                      </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>20 May 2022</div>
                       </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Other Offers
                       </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>I wish not to answer</div>
+                      </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Interview
+                      </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>No</div>
                       </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Languages
                       </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>-English,Hindi,Marathi</div>
+                      </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Travel
                       </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>25% of the time</div>
+                      </div>
                     </div>
                     <div class="row right__section__row">
                       <div class="col-lg-4 right__section__question">
                         Contract
+                      </div>
+                      <div class="col-lg-8 right__section__answer">
+                        <div>No, I will not work on contract</div>
                       </div>
                     </div>
                   </div>
@@ -441,51 +549,46 @@
               <div class="col-lg-4 m-0 p-0 review-skills-strong">
                 <span class="skills-heading-strong">Strong Skills Match</span>
                 <div class="skills mt-3">
-                  <span class="skill">HTML5</span>
-                  <span class="skill">CSS3</span>
-                  <span class="skill">JavaScript</span>
-                  <span class="skill">Java</span>
+                  <span class="skill">Database</span>
+                  <span class="skill">Springboot</span>
+                  <span class="skill">Angular.Js</span>
+                  <span class="skill">Jquery</span>
+                  <span class="skill">Bootstrap</span>
                   <span class="skill">Python</span>
-                  <span class="skill">Ruby</span>
-                  <span class="skill">.Net</span>
+                  <span class="skill">Spring</span>
+                  <span class="skill">GitHub</span>
+                  <span class="skill">JavaScript</span>
                   <span class="skill">MySQL</span>
-                  <span class="skill">MongoDB</span>
-                  <span class="skill">Oracle</span>
-                  <span class="skill">SQLServer</span>
-                  <span class="skill"> UI/UX design </span>
-                  <span class="skill">Apache</span>
-                  <span class="more-skill">5+</span>
+                  <span class="skill">AWS</span>
+                  <span class="skill"> WebSphere </span>
                 </div>
               </div>
               <div class="col-lg-4 m-0 p-0 review-skills-weak">
                 <span class="skills-heading-weak">Weak Skills Match</span>
                 <div class="skills mt-3">
-                  <span class="skill">REST and SOAP</span>
-                  <span class="skill">Front End Developer</span>
-                  <span class="skill">Java</span>
-                  <span class="skill">Back End Developer</span>
-                  <span class="skill">Database Desiner</span>
-                  <span class="skill">Ruby</span>
-                  <span class="skill">SQLServer</span>
-                  <span class="skill"> UI /UX design </span>
+                  <span class="skill">Node.Js</span>
+                  <span class="skill">React</span>
+                  <span class="skill">Servlets</span>
+                  <span class="skill">Microservices</span>
+                  <span class="skill">Mongodb</span>
+                  <span class="skill">Azure</span>
                   <span class="skill">Apache</span>
+                  <span class="skill"> Backend Developer</span>
+                  <span class="skill">Java</span>
                 </div>
               </div>
               <div class="col-lg-4 m-0 p-0 review-skills-no">
                 <span class="skills-heading-no">No Skills Match</span>
                 <div class="skills mt-3">
-                  <span class="skill">Back End Developer</span>
-                  <span class="skill">Database Desiner</span>
-                  <span class="skill">Ruby</span>
-                  <span class="skill">SQLServer</span>
-                  <span class="skill">UI /UX design</span>
-                  <span class="skill">Apache</span>
+                  <span class="skill">Multithreading</span>
+                  <span class="skill">Hadoop</span>
+                  <span class="skill">.net</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
+        <!-- use  class strong good less no for colors-->
         <!--Litmus Heatmap-->
         <div class="row litmus-heatmap" id="heatmap-id">
           <div class="row heatmap-header">
@@ -532,7 +635,402 @@
 
           <div class="row m-0 heatmap-columns">
             <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> Front end </span>
+              <span class="heatmap-header-column--block"> Bootstrap </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Bootstrap</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which Bootstrap version have you worked on?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Version 5</span>
+                      <span class='skill'>Version 4</span>
+                      <span class='skill selected'
+                        >Version 3</span
+                      >
+                      <span class='skill'>Version 2</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Version
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Features</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following bootstrap capabilities have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Layout Design</span>
+                      <span class='skill'>Static UI Components</span>
+                      <span class='skill selected'
+                        >Dynamic UI components</span
+                      >
+                      <span class='skill selected'>Themes</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Features
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Static UI</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which static UI aspects of Bootstrap have you used before?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Images</span>
+                      <span class='skill selected'>Tables</span>
+                      <span class='skill selected'
+                        >Fonts</span
+                      >
+                      <span class='skill selected'>Buttons</span>
+                      <span class='skill selected'>Navbar</span>
+                      <span class='skill selected'>Dropdowns</span>
+                      <span class='skill selected'>Pagination</span>
+                      <span class='skill'>Popovers</span>
+                      <span class='skill selected'>Tooltips</span>
+                      <span class='skill'>I have no experience</span>
+
+                    </div>
+                  </div>
+                </div>"
+              >
+                Static UI
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Dynamic UI</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which dynamic components from bootstrap have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Carousel</span>
+                      <span class='skill selected'>Collapse</span>
+                      <span class='skill '>Forms</span>
+                      <span class='skill selected'>Spinners</span>
+                      <span class='skill'>3rd party plugins</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Dynamic UI
+              </span>
+            </div>
+          </div>
+
+          <div class="row m-0 heatmap-columns">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> Angular </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Angular Version</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which angular version have you developed applications for?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Angular13</span>
+                      <span class='skill'>Angular12</span>
+                      <span class='skill'>Angular11</span>
+                      <span class='skill'>Angular10</span>
+                      <span class='skill selected'>Angular9</span>
+                      <span class='skill'>Angular8</span>
+                      <span class='skill'>Angular7</span>
+                      <span class='skill'>Angular6</span>
+                      <span class='skill'>Angular5</span>
+                      <span class='skill'>Angular4</span>
+                      <span class='skill'>Angular2</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Angular Version
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Angular Directives</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following Angular JS directives have you used</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>ng-init</span>
+                      <span class='skill'>ng-model</span>
+                      <span class='skill '>ng-controller</span>
+                      <span class='skill selected'>ng-bind</span>
+                      <span class='skill'>ng-repeat</span>
+                      <span class='skill selected'>ng-show</span>
+                      <span class='skill'>ng-if</span>
+                      <span class='skill'>ng-click</span>
+                      <span class='skill'>ng-form</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Angular Directives
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Angular Capabilities</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following Angular JS capabilities have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Differential loading</span>
+                      <span class='skill selected'>Ivy Rendering engine</span>
+                      <span class='skill '>Bazel support</span>
+                      <span class='skill selected'>Builders API</span>
+                      <span class='skill'>Web workers</span>
+                      <span class='skill'>Opt-in Usage sharing</span>
+                      <span class='skill selected'>Router backwards compatibility</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Angular Capabilities
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Angular Libraries</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following Angular JS libraries have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Onsen</span>
+                      <span class='skill selected'>Ionic</span>
+                      <span class='skill selected'>Meteor</span>
+                      <span class='skill'>PrimeFaces</span>
+                      <span class='skill selected'>jQwidgets</span>
+                      <span class='skill selected'>DataTables</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Angular Libraries
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 heatmap-columns">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> NodeJS </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Versionsp</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which NodeJS version have you used for building your application?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>15.0</span>
+                      <span class='skill selected'>14.0</span>
+                      <span class='skill '>13.0</span>
+                      <span class='skill'>12.0</span>
+                      <span class='skill'>10.0</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Versions
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Frameworks</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following NodeJS frameworks have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Express</span>
+                      <span class='skill'>Meteor</span>
+                      <span class='skill selected'>Koa</span>
+                      <span class='skill'>Sail</span>
+                      <span class='skill'>Loopback</span>
+                      <span class='skill selected'>Hapi</span>
+                      <span class='skill'>Nest</span>
+                      <span class='skill'>Adonis</span>
+                      <span class='skill selected'>Derby</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Frameworks
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Concepts</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following concepts have you utlized which building a Node JS application?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Creating a module</span>
+                      <span class='skill selected'>Route management</span>
+                      <span class='skill selected'>Handling user requests</span>
+                      <span class='skill'>Using templates for building views</span>
+                      <span class='skill'>Configuration</span>
+                      <span class='skill selected'>Error handling</span>
+                      <span class='skill selected'>Database connectivity</span>
+                      <span class='skill'>Using Controllers</span>
+                      <span class='skill'>Using Models</span>
+                      <span class='skill selected'>User authentication</span>
+                      <span class='skill'>Building an API</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Concepts
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks no"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>IDEs</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which IDE have you used while developing Node JS applications?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Cloud 9</span>
+                      <span class='skill'>Intellij Idea</span>
+                      <span class='skill'>Webstorm</span>
+                      <span class='skill '>Komodo</span>
+                      <span class='skill'>Koding</span>
+                      <span class='skill '>Eclipse</span>
+                      <span class='skill '>Webmatrix</span>
+                      <span class='skill'>Sublime Text</span>
+                      <span class='skill '>Atom</span>
+                      <span class='skill'>Brackets</span>
+                      <span class='skill selected'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                IDEs
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 heatmap-columns">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> React </span>
             </div>
             <div class="heatmap-columns--skills">
               <span
@@ -543,29 +1041,365 @@
                 title="<div class='lbtooltip-section'>
                   
                   <div class='lbtooptip-header'>
-                    <h6>Type of Web App</h6>
+                    <h6>React JS features</h6>
                     <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
                   </div>
                   <span class='lbtooltip-question'
-                    >Which type of Web Solutions have you developed?</span
+                    >Which of the following React JS features have you used?</span
                   >
                   <div class='col-lg-12 m-0 p-0 review-skills-strong'>
                     <div class='skills mt-3'>
-                      <span class='skill'>Static Webpage</span>
-                      <span class='skill'>Single Page Application (SPA)</span>
-                      <span class='skill selected'
-                        >Dynamic Web App with Server side components</span
-                      >
-                      <span class='skill'>Javascript Plugin</span>
+                      <span class='skill'>Virtual DOM</span>
+                      <span class='skill selected'>Server Side Rendering</span>
+                     <span class='skill'>Unidirectional data binding</span>
+                     <span class='skill'>JSX</span>
+                     <span class='skill'>Property validation</span>
+                     <span class='skill selected'>Redux</span>
                       <span class='skill'>I have no experience</span>
                     </div>
                   </div>
                 </div>"
               >
-                Type of website
+                React JS features
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>React Hooks</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following React hooks have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>useArray</span>
+                      <span class='skill'>react-use-form-state</span>
+                      <span class='skill'>useMedia</span>
+                      <span class='skill selected'>react-fetch-hook</span>
+                      <span class='skill'>react-useportal</span>
+                      <span class='skill'>react-firebase</span>
+                      <span class='skill selected'>use-onClickOutside</span>
+                      <span class='skill'>useIntersectionObserver</span>
+                      <span class='skill'>use-location</span>
+                      <span class='skill'>use-redux</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                React Hooks
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks no"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Lifecycle events</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following React lifecycle methods have you utilized</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>render</span>
+                      <span class='skill'>componentDidMount</span>
+                      <span class='skill'>componentDidUpdate</span>
+                      <span class='skill'>componentWillUnmount</span>
+                      <span class='skill '>shouldComponentUpdate</span>
+                      <span class='skill'>getDerivedStateFromProps</span>
+                      <span class='skill'>getSnapshotBeforeUpdate</span>
+                      <span class='skill selected'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Lifecycle events
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 heatmap-columns">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> Microservices </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Design approach</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >What type of microservices project have you worked?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Developing a microservice from scratch</span>
+                      <span class='skill selected'>Breaking up existing monolithic architecture into microservices</span>
+                      <span class='skill selected'>Refactoring existing microservices</span>
+                      <span class='skill'>Transitioning from one microservices framework / language to another</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Design approach
               </span>
               <span
                 class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Type</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which type of microservices have you worked on?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill '>Stateless</span>
+                      <span class='skill selected'>Data-centric</span>
+                      <span class='skill'>Aggregators</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Type
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Protocols</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following protocols have you used while developing microservices?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>REST</span>
+                      <span class='skill selected'>AMQP</span>
+                      <span class='skill'>HTTP</span>
+                      <span class='skill selected'>TCP</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Protocols
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 heatmap-columns" id="jsrow">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> JavaScript </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Variation</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which flavor of JS have you worked in before?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Javascript</span>
+                      <span class='skill selected'>ECMAScript</span>
+                      <span class='skill'>Coffeescript</span>
+                      <span class='skill'>Typescript</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Variation
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Basic Concepts</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >You are familiar with which of the following basic JS concepts?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Variables</span>
+                      <span class='skill selected'>Operators</span>
+                      <span class='skill selected'>Objects</span>
+                      <span class='skill selected'>Regular expressions</span>
+                      <span class='skill selected'>Functions</span>
+                      <span class='skill selected'>Window</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Basic Concepts
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>DOM Concepts</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >You have hands on knowledge of which of the following DOM concepts in JS?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Node hierarchy</span>
+                      <span class='skill selected'>Dynamic scripts</span>
+                      <span class='skill'>Selectors API</span>
+                      <span class='skill selected'>Element traversal</span>
+                      <span class='skill selected'>Form serialization</span>
+                      <span class='skill selected'>Rich Text editing</span>
+                      <span class='skill'>Graphics</span>
+                      <span class='skill selected'>Drag and Drop</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                DOM Concepts
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Frameworks</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following JS frameworks have you used?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Angular</span>
+                      <span class='skill selected'>React</span>
+                      <span class='skill'>Vue</span>
+                      <span class='skill'>Ember</span>
+                      <span class='skill'>Ext JS</span>
+                      <span class='skill'>Meteor</span>
+                      <span class='skill'>Polymer</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Frameworks
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section col-lg-12'>
+                  
+                  <div class='lbtooptip-header col-lg-8'>
+                    <h6>Engine</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which JS Engine have you written your code for?</span
+                  >
+                  <div class='col-lg-8 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>V8 (Chrome)</span>
+                      <span class='skill'>Spidermonkey (Mozilla)</span>
+                      <br>
+                      <span class='skill'>JavaScriptCode (Safari)</span>
+                      <span class='skill'>Chakra (IE)</span>
+                      <span class='skill'>Hermes (Facebook)</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Engine
+              </span>
+            </div>
+          </div>
+          <div class="row m-0 heatmap-columns">
+            <div class="heatmap-columns--categories">
+              <span class="heatmap-header-column--block"> jQuery </span>
+            </div>
+            <div class="heatmap-columns--skills">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Type of Jquery code used</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which type of jQuery development have you done?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill selected'>Snippets</span>
+                      <span class='skill selected'>Plug-In</span>
+                      <span class='skill'>Custom Code</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Type of Jquery code used
+              </span>
+              <span
+                class="lbtooltip heatmap-header-column--blocks less"
                 data-toggle="tooltip"
                 data-bs-html="true"
                 data-bs-placement="bottom"
@@ -576,201 +1410,119 @@
                     <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
                   </div>
                   <span class='lbtooltip-question'
-                    >Which of the following techniques have you used?</span
+                    >Which of the following jQuery capabilities do you have hands on experience with?</span
                   >
                   <div class='col-lg-12 m-0 p-0 review-skills-strong'>
                     <div class='skills mt-3'>
-                      <span class='skill selected'>Responsive Design</span>
-                      <span class='skill'>Progressive Enhancement</span>
-                      <span class='skill selected'
-                        >Graceful Degradation</span
-                      >
-                      <span class='skill'>Mobile First</span>
+                      <span class='skill '>Effects & Animation</span>
+                      <span class='skill'>AJAX</span>
+                      <span class='skill'>DOM element selections</span>
+                      <span class='skill selected'>Events</span>
+                      <span class='skill selected'>CSS manipulation</span>
                       <span class='skill'>I have no experience</span>
                     </div>
                   </div>
                 </div>"
               >
-                Development techniques
-              </span>
-              <span
-                class="lbtooltip heatmap-header-column--blocks strong"
-                data-toggle="tooltip"
-                data-bs-html="true"
-                data-bs-placement="bottom"
-                title="<div class='lbtooltip-section'>
-                  
-                  <div class='lbtooptip-header'>
-                    <h6>Security</h6>
-                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
-                  </div>
-                  <span class='lbtooltip-question'
-                    >Which type of Web Solutions have you developed?</span
-                  >
-                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
-                    <div class='skills mt-3'>
-                      <span class='skill'>Static Webpage</span>
-                      <span class='skill'>Single Page Application (SPA)</span>
-                      <span class='skill selected'
-                        >Dynamic Web App with Server side components</span
-                      >
-                      <span class='skill'>Javascript Plugin</span>
-                      <span class='skill'>I have no experience</span>
-                    </div>
-                  </div>
-                </div>"
-              >
-                Security
-              </span>
-              <span
-                class="lbtooltip heatmap-header-column--blocks strong"
-                data-toggle="tooltip"
-                data-bs-html="true"
-                data-bs-placement="bottom"
-                title="<div class='lbtooltip-section'>
-                  
-                  <div class='lbtooptip-header'>
-                    <h6>Accessibility</h6>
-                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
-                  </div>
-                  <span class='lbtooltip-question'
-                    >Which type of Web Solutions have you developed?</span
-                  >
-                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
-                    <div class='skills mt-3'>
-                      <span class='skill'>Static Webpage</span>
-                      <span class='skill'>Single Page Application (SPA)</span>
-                      <span class='skill selected'
-                        >Dynamic Web App with Server side components</span
-                      >
-                      <span class='skill'>Javascript Plugin</span>
-                      <span class='skill'>I have no experience</span>
-                    </div>
-                  </div>
-                </div>"
-              >
-                Accessibility
-              </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> Javascript </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks strong">
-                Variation
-              </span>
-              <span class="heatmap-header-column--blocks good">
-                Basic Concepts
-              </span>
-              <span class="heatmap-header-column--blocks strong">
-                DOM Concepts
-              </span>
-              <span class="heatmap-header-column--blocks good">
-                Frameworks
-              </span>
-              <span class="heatmap-header-column--blocks strong"> Engine </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> HTML </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks strong">
-                Version
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                Frameworks
-              </span>
-              <span class="heatmap-header-column--blocks no"> Dev tools </span>
-              <span class="heatmap-header-column--blocks less">
-                Libraries
-              </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> CSS </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks strong">
-                Libraries
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                Preprocessors
-              </span>
-              <span class="heatmap-header-column--blocks strong">
-                Features (Layout)
-              </span>
-              <span class="heatmap-header-column--blocks no"> CSS3 (New) </span>
-              <span class="heatmap-header-column--blocks less"> Versions </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> jQuery </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks less">
-                Type of Jquery code used
-              </span>
-              <span class="heatmap-header-column--blocks less">
                 jQuery Capabilities
               </span>
-              <span class="heatmap-header-column--blocks good">
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>jQuery data format</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >How have you stored and referenced data in your jQuery code?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>CSV / Flat files</span>
+                      <span class='skill selected'>JSON</span>
+                      <span class='skill'>XML</span>
+                      <span class='skill selected'>Database</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
                 jQuery data format
               </span>
             </div>
           </div>
           <div class="row m-0 heatmap-columns">
             <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> Angular </span>
+              <span class="heatmap-header-column--block"> Springboot </span>
             </div>
             <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks good">
-                Angular Version
+              <span
+                class="lbtooltip heatmap-header-column--blocks good"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Basic concepts</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following basic concepts in Springboot have you worked with?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill'>Using Springboot CLI</span>
+                      <span class='skill'>Using Auto-Configuration</span>
+                      <span class='skill'>Using application and commandline runners</span>
+                      <span class='skill selected'>Creating an MVC application</span>
+                      <span class='skill'>Overriding defaults</span>
+                      <span class='skill selected'>Database connection using JDBC</span>
+                      <span class='skill selected'>Connecting to NoSQL DB e.g. Mongo DB</span>
+                      <span class='skill'>Using Spring data Redis</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Basic concepts
               </span>
-              <span class="heatmap-header-column--blocks no">
-                Angular Directives
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                Angular Capabilities
-              </span>
-              <span class="heatmap-header-column--blocks good">
-                Angular Libraries
-              </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> React </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks good">
-                React JS features
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                React Hooks
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                Lifecycle events
-              </span>
-            </div>
-          </div>
-          <div class="row m-0 heatmap-columns">
-            <div class="heatmap-columns--categories">
-              <span class="heatmap-header-column--block"> Bootstrap </span>
-            </div>
-            <div class="heatmap-columns--skills">
-              <span class="heatmap-header-column--blocks good"> Version </span>
-              <span class="heatmap-header-column--blocks good"> Features </span>
-              <span class="heatmap-header-column--blocks less">
-                Static UI
-              </span>
-              <span class="heatmap-header-column--blocks less">
-                Dynamic UI
+              <span
+                class="lbtooltip heatmap-header-column--blocks strong"
+                data-toggle="tooltip"
+                data-bs-html="true"
+                data-bs-placement="bottom"
+                title="<div class='lbtooltip-section'>
+                  
+                  <div class='lbtooptip-header'>
+                    <h6>Advanced concepts</h6>
+                    <span><span class='lbtooltip-dot'>●</span> Candidate Response</span>
+                  </div>
+                  <span class='lbtooltip-question'
+                    >Which of the following advanced concepts in Springboot have you worked with?</span
+                  >
+                  <div class='col-lg-12 m-0 p-0 review-skills-strong'>
+                    <div class='skills mt-3'>
+                      <span class='skill '>Using Reactive data approach</span>
+                      <span class='skill selected'>Using the Webflux webclient</span>
+                      <span class='skill'>Testing using the Spring boot testing framework</span>
+                      <span class='skill selected'>Creating Mocking beans</span>
+                      <span class='skill'>Implementing security using Spring security</span>
+                      <span class='skill'>Using OAuth2 for authentication</span>
+                      <span class='skill selected'>Working with Message Brokers e.g. JMS, RabbitMQ</span>
+                      <span class='skill selected'>Using the Springboot actuator</span>
+                      <span class='skill'>Programming Spring Integration</span>
+                      <span class='skill'>Using the Spring Cloud Stream</span>
+                      <span class='skill'>I have no experience</span>
+                    </div>
+                  </div>
+                </div>"
+              >
+                Advanced concepts
               </span>
             </div>
           </div>
@@ -794,10 +1546,15 @@
                 aria-controls="collapseOne1"
               >
                 <div class="col-lg-6 m-0 screening-questions">
-                  <span>Job Screening Questions (20)</span>
+                  <span>Job Screening Questions (30)</span>
                 </div>
-                <div class="col-lg-6 m-0 p-0 lb-collapse">
-                  <img src="images/collapse-icon.svg" alt="Collapse-icon" />
+                <div class="col-lg-6 m-0 p-0 lb-collapse" id="collapse-id">
+                  <img
+                    src="images/expand-icon.svg"
+                    alt="Collapse-icon"
+                    class="drop-icon"
+                    id="drop-img"
+                  />
                 </div>
               </div>
 
@@ -821,393 +1578,229 @@
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  1.Which City are you currently based in?
+                  1.Which Bootstrap version have you worked on?
                 </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
+                <span class="col-lg-5 answers"> Version 3 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  2. What is the Official Notice Period you are required to
-                  serve in your current company?
+                  2.Which angular version have you developed applications for?
                 </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
+                <span class="col-lg-5 answers"> Angular9 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  3. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
+                  3.Which NodeJS version have you used for building your
+                  application?
                 </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions"> 4. Do you lead a team? </span>
-                <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
-                </span>
+                <span class="col-lg-5 answers"> 14.0</span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  5. What is your favourite language and why?
+                  4.Which of the following React JS features have you used?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Server Side Rendering, Redux
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  6.Which City are you currently based in?
-                </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  7. What is the Official Notice Period you are required to
-                  serve in your current company?
-                </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  8. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
-                </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions"> 9. Do you lead a team? </span>
-                <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
-                </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  10. What is your favourite language and why?
+                  5.What type of microservices project have you worked?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Breaking up existing monolithic architecture into
+                  microservices, Refactoring existing microservices
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  11.Which City are you currently based in?
+                  6.Which flavor of JS have you worked in before?
                 </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
+                <span class="col-lg-5 answers"> ECMAScript, Javascript </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  12. What is the Official Notice Period you are required to
-                  serve in your current company?
+                  7.Which type of microservices have you worked on?
                 </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
+                <span class="col-lg-5 answers"> Data-centric </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  13. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
+                  8.Which of the following Angular JS directives have you used?
                 </span>
-                <span class="col-lg-5 answers"> No </span>
+                <span class="col-lg-5 answers"> ng-bind, ng-show </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  14. Do you lead a team?
+                  9.Which of the following NodeJS frameworks have you used?
+                </span>
+                <span class="col-lg-5 answers"> Koa, Hapi, Derby </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  10.Which of the following React hooks have you used?
                 </span>
                 <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
+                  react-fetch-hook, use-onClickOutside
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  15. What is your favourite language and why?
+                  11.Which of the following bootstrap capabilities have you
+                  used?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Dynamic UI components, Themes
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  16.Which City are you currently based in?
-                </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  17. What is the Official Notice Period you are required to
-                  serve in your current company?
-                </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  18. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
-                </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  19. Do you lead a team?
+                  12.You are familiar with which of the following basic JS
+                  concepts?
                 </span>
                 <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
+                  Objects, Operators, Variables, Functions, Window, Regular
+                  expressions
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  20. What is your favourite language and why?
+                  13.You have hands on knowledge of which of the following DOM
+                  concepts in JS?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!--Questions-->
-        <div
-          class="accordion md-accordion"
-          id="accordionEx"
-          role="tablist"
-          aria-multiselectable="true"
-        >
-          <div class="row Questions" id="screening-id">
-            <div class="Questions-heading">
-              <div
-                class="row m-0 question-categories"
-                data-bs-toggle="collapse"
-                data-parent="#accordionEx"
-                href="#collapse2"
-                aria-expanded="true"
-                aria-controls="collapse2"
-              >
-                <div class="col-lg-6 m-0 screening-questions">
-                  <span>HR Screening Questions (10)</span>
-                </div>
-                <div class="col-lg-6 m-0 p-0 lb-collapse">
-                  <img src="images/collapse-icon.svg" alt="Collapse-icon" />
-                </div>
-              </div>
-
-              <div></div>
-            </div>
-            <!-- put class collapse show down below for accordian to show data -->
-            <div
-              id="collapse2"
-              class="collapse"
-              role="tabpanel"
-              aria-labelledby="headingOne1"
-              data-parent="#accordionEx"
-            >
-              <div class="row column-definitions">
-                <div class="col-lg-7 p-0 column-question">
-                  <span class="column-question-heading">Questions</span>
-                </div>
-                <div class="col-lg-5 p-0 column-answer">
-                  <span class="column-answer-heading">Answers</span>
-                </div>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  1.Which City are you currently based in?
-                </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  2. What is the Official Notice Period you are required to
-                  serve in your current company?
-                </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  3. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
-                </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions"> 4. Do you lead a team? </span>
-                <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
+                  Dynamic scripts, Form serialization, Rich Text editing,
+                  Element traversal, Drag and Drop
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  5. What is your favourite language and why?
+                  14.Which of the following protocols have you used while
+                  developing microservices?
+                </span>
+                <span class="col-lg-5 answers"> TCP, REST, AMQP </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  15.Which of the following React lifecycle methods have you
+                  utilized
+                </span>
+                <span class="col-lg-5 answers"> I have no experience </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  16.Which of the following concepts have you utlized which
+                  building a Node JS application?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Handling user requests, Route management, Error handling,
+                  Database connectivity, User authentication
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  6.Which City are you currently based in?
-                </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  7. What is the Official Notice Period you are required to
-                  serve in your current company?
-                </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  8. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
-                </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions"> 9. Do you lead a team? </span>
-                <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
-                </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  10. What is your favourite language and why?
+                  17.Which static UI aspects of Bootstrap have you used before?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Tables, Fonts, Buttons, Navbar, Pagination, Dropdowns,
+                  Tooltips
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  11.Which City are you currently based in?
-                </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  12. What is the Official Notice Period you are required to
-                  serve in your current company?
-                </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  13. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
-                </span>
-                <span class="col-lg-5 answers"> No </span>
-              </div>
-              <div class="row column-definitions">
-                <span class="col-lg-7 questions">
-                  14. Do you lead a team?
+                  18.Which of the following Angular JS capabilities have you
+                  used?
                 </span>
                 <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
+                  Builders API, Ivy Rendering engine, Router backwards
+                  compatibility
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  15. What is your favourite language and why?
+                  19.Which IDE have you used while developing Node JS
+                  applications?
+                </span>
+                <span class="col-lg-5 answers"> I have no experience </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  20.Which of the following Angular JS libraries have you used?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Meteor, Ionic, Onsen, jQwidgets, DataTables
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  16.Which City are you currently based in?
+                  21.Which of the following JS frameworks have you used?
                 </span>
-                <span class="col-lg-5 answers"> Bangalore </span>
+                <span class="col-lg-5 answers"> React, Angular </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  17. What is the Official Notice Period you are required to
-                  serve in your current company?
+                  22.Which dynamic components from bootstrap have you used?
                 </span>
-                <span class="col-lg-5 answers"> 30 Days </span>
+                <span class="col-lg-5 answers"> Collapse, Spinners </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  18. If an opportunity to work with a great company came along,
-                  would you be willing to work on Contract?
+                  23.Which JS Engine have you written your code for?
                 </span>
-                <span class="col-lg-5 answers"> No </span>
+                <span class="col-lg-5 answers"> V8 (Chrome) </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  19. Do you lead a team?
+                  24.You have written code to handle which of the following JS
+                  events?
+                </span>
+                <span class="col-lg-5 answers"> mouseover, click, change </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  25.Which of the following JS testing frameworks have you used?
+                </span>
+                <span class="col-lg-5 answers"> Selenium </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  26.Which type of jQuery development have you done?
+                </span>
+                <span class="col-lg-5 answers"> Plug-In, Snippets </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  27.Which of the following jQuery capabilities do you have
+                  hands on experience with?
+                </span>
+                <span class="col-lg-5 answers"> Events, CSS manipulation </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  28.How have you stored and referenced data in your jQuery
+                  code?
+                </span>
+                <span class="col-lg-5 answers"> JSON, Database </span>
+              </div>
+              <div class="row column-definitions">
+                <span class="col-lg-7 questions">
+                  29.Which of the following basic concepts in Springboot have
+                  you worked with?
                 </span>
                 <span class="col-lg-5 answers">
-                  Small size team (1-3 people), Small size team (7-10 people),
-                  Large size team (10-50 people)
+                  Creating an MVC application, Connecting to NoSQL DB e.g. Mongo
+                  DB, Database connection using JDBC
                 </span>
               </div>
               <div class="row column-definitions">
                 <span class="col-lg-7 questions">
-                  20. What is your favourite language and why?
+                  30.Which of the following advanced concepts in Springboot have
+                  you worked with?
                 </span>
                 <span class="col-lg-5 answers">
-                  Full Stack Web Developers work with a multitude of languages.
-                  Having just one loved coding language might be an alarm
-                  signal. Ideally, a candidate must have a few languages that he
-                  loves, preferably, some with which he can design the front end
-                  and others with which he can take care of the back end. A
-                  candidate should be able to demonstrate that well and remember
-                  to include the basic most used ones like HTML, CSS, Python
-                  etc.
+                  Creating Mocking beans, Using the Webflux webclient, Working
+                  with Message Brokers e.g. JMS, RabbitMQ, Using the Spring
+                  Cloud Stream
                 </span>
               </div>
             </div>
@@ -1221,9 +1814,9 @@
               <div class="col-lg-3 m-0 p-0 candidate-history-interaction">
                 <span>Candidate Interaction History</span>
               </div>
-              <div class="col-lg-3 m-0 p-0 candidate-history-questions">
+              <!-- <div class="col-lg-3 m-0 p-0 candidate-history-questions">
                 <span>Recruiter Comments</span>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="row candidate-history-column-definitions">
@@ -1246,31 +1839,10 @@
           <div class="row candidate-history-columns--grey">
             <div class="col-lg-7">
               <div class="row">
-                <span class="col-lg-2">56985</span>
-                <span class="col-lg-5">Senior Software Engineer</span>
-                <span class="col-lg-3">18-Aug-2019</span>
-                <span class="col-lg-2">Interview</span>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="row">
-                <span class="col-lg-2" style="text-align: center">
-                  <span class="status-symbol--cross">
-                    <img src="images/cross-icon.svg" />
-                  </span>
-                </span>
-                <span class="col-lg-6">Abhishek Kumar Mujumdar</span>
-                <span class="col-lg-4">Swapnil Bule</span>
-              </div>
-            </div>
-          </div>
-          <div class="row candidate-history-columns--white">
-            <div class="col-lg-7">
-              <div class="row">
-                <span class="col-lg-2">58963</span>
-                <span class="col-lg-5">Senior Full Stack Designer</span>
-                <span class="col-lg-3">07-March-2020</span>
-                <span class="col-lg-2">Sourcing</span>
+                <span class="col-lg-2">7145</span>
+                <span class="col-lg-5">Full Stack Developer</span>
+                <span class="col-lg-3">14-Mar-2022</span>
+                <span class="col-lg-2">Screening</span>
               </div>
             </div>
             <div class="col-lg-5">
@@ -1280,18 +1852,39 @@
                     <img src="images/check-icon.svg" />
                   </span>
                 </span>
-                <span class="col-lg-6">Mayuresh Rajopadhye</span>
-                <span class="col-lg-4">Anagha Chaudhari</span>
+                <span class="col-lg-6">Prachita Joshi</span>
+                <span class="col-lg-4">Aayushi Yadav</span>
+              </div>
+            </div>
+          </div>
+          <div class="row candidate-history-columns--white">
+            <div class="col-lg-7">
+              <div class="row">
+                <span class="col-lg-2">6448</span>
+                <span class="col-lg-5">Full Stack Developer</span>
+                <span class="col-lg-3">10-Mar-2022</span>
+                <span class="col-lg-2">Submitted</span>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="row">
+                <span class="col-lg-2" style="text-align: center">
+                  <span class="status-symbol--correct">
+                    <img src="images/check-icon.svg" />
+                  </span>
+                </span>
+                <span class="col-lg-6">Joseph D’Souza</span>
+                <span class="col-lg-4">Sanket Roy</span>
               </div>
             </div>
           </div>
           <div class="row candidate-history-columns--grey">
             <div class="col-lg-7">
               <div class="row">
-                <span class="col-lg-2">56985</span>
-                <span class="col-lg-5">Senior Software Engineer</span>
-                <span class="col-lg-3">18-Aug-2019</span>
-                <span class="col-lg-2">Interview</span>
+                <span class="col-lg-2">6214</span>
+                <span class="col-lg-5">Front End Developer</span>
+                <span class="col-lg-3">28-Feb-2022</span>
+                <span class="col-lg-2">Screening</span>
               </div>
             </div>
             <div class="col-lg-5">
@@ -1301,39 +1894,18 @@
                     <img src="images/cross-icon.svg" />
                   </span>
                 </span>
-                <span class="col-lg-6">Abhishek Kumar Mujumdar</span>
-                <span class="col-lg-4">Swapnil Bule</span>
+                <span class="col-lg-6">Vipul K M</span>
+                <span class="col-lg-4">Brijesh Wan</span>
               </div>
             </div>
           </div>
           <div class="row candidate-history-columns--white">
             <div class="col-lg-7">
               <div class="row">
-                <span class="col-lg-2">58963</span>
-                <span class="col-lg-5">Senior Full Stack Designer</span>
-                <span class="col-lg-3">07-March-2020</span>
-                <span class="col-lg-2">Sourcing</span>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="row">
-                <span class="col-lg-2" style="text-align: center">
-                  <span class="status-symbol--correct">
-                    <img src="images/check-icon.svg" />
-                  </span>
-                </span>
-                <span class="col-lg-6">Mayuresh Rajopadhye</span>
-                <span class="col-lg-4">Anagha Chaudhari</span>
-              </div>
-            </div>
-          </div>
-          <div class="row candidate-history-columns--grey">
-            <div class="col-lg-7">
-              <div class="row">
-                <span class="col-lg-2">56985</span>
-                <span class="col-lg-5">Senior Software Engineer</span>
-                <span class="col-lg-3">18-Aug-2019</span>
-                <span class="col-lg-2">Interview</span>
+                <span class="col-lg-2">5412</span>
+                <span class="col-lg-5">Back End Developer</span>
+                <span class="col-lg-3">01-Feb-2022</span>
+                <span class="col-lg-2">Rejected</span>
               </div>
             </div>
             <div class="col-lg-5">
@@ -1343,50 +1915,8 @@
                     <img src="images/cross-icon.svg" />
                   </span>
                 </span>
-                <span class="col-lg-6">Abhishek Kumar Mujumdar</span>
-                <span class="col-lg-4">Swapnil Bule</span>
-              </div>
-            </div>
-          </div>
-          <div class="row candidate-history-columns--white">
-            <div class="col-lg-7">
-              <div class="row">
-                <span class="col-lg-2">58963</span>
-                <span class="col-lg-5">Senior Full Stack Designer</span>
-                <span class="col-lg-3">07-March-2020</span>
-                <span class="col-lg-2">Sourcing</span>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="row">
-                <span class="col-lg-2" style="text-align: center">
-                  <span class="status-symbol--correct">
-                    <img src="images/check-icon.svg" />
-                  </span>
-                </span>
-                <span class="col-lg-6">Mayuresh Rajopadhye</span>
-                <span class="col-lg-4">Anagha Chaudhari</span>
-              </div>
-            </div>
-          </div>
-          <div class="row mb-0 candidate-history-columns--grey">
-            <div class="col-lg-7">
-              <div class="row">
-                <span class="col-lg-2">56985</span>
-                <span class="col-lg-5">Senior Software Engineer</span>
-                <span class="col-lg-3">18-Aug-2019</span>
-                <span class="col-lg-2">Interview</span>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="row">
-                <span class="col-lg-2" style="text-align: center">
-                  <span class="status-symbol--cross">
-                    <img src="images/cross-icon.svg" />
-                  </span>
-                </span>
-                <span class="col-lg-6">Abhishek Kumar Mujumdar</span>
-                <span class="col-lg-4">Swapnil Bule</span>
+                <span class="col-lg-6">Arun Menon Kumar</span>
+                <span class="col-lg-4">Faran Khan</span>
               </div>
             </div>
           </div>
@@ -1405,10 +1935,24 @@
               >
                 <div class="resume-controls">
                   <span class="controls mr-2">
-                    <img src="images/download-blue.svg" alt="Download" />
+                    <a
+                      data-bs-toggle="popover"
+                      data-bs-trigger="hover"
+                      data-bs-placement="bottom"
+                      title="Download"
+                      data-bs-content="It allows you to download candidate resume"
+                      ><img src="images/download-blue.svg" alt="Download"
+                    /></a>
                   </span>
                   <span class="controls">
-                    <img src="images/refresh-blue.svg" alt="Refresh" />
+                    <a
+                      data-bs-toggle="popover"
+                      data-bs-trigger="hover"
+                      data-bs-placement="bottom"
+                      title="Refresh"
+                      data-bs-content="It allows you to refresh candidate resume"
+                      ><img src="images/refresh-blue.svg" alt="Refresh"
+                    /></a>
                   </span>
                 </div>
               </div>
@@ -1416,7 +1960,7 @@
           </div>
           <div class="row resume-box">
             <iframe
-              src="images/resume.pdf"
+              src="images/resume.pdf#toolbar=0"
               frameborder="0"
               width="95%"
               height="961"
@@ -1434,7 +1978,38 @@
     <script>
       const tooltip = document.querySelectorAll(".lbtooltip");
       tooltip.forEach((t) => {
-        new bootstrap.Tooltip(t);
+        new bootstrap.Tooltip(t, {
+          container: document.querySelector("#heatmap-id"),
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var popoverTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="popover"]')
+        );
+        var popoverList = popoverTriggerList.map(function (element) {
+          return new bootstrap.Popover(element);
+        });
+      });
+      $(".screening-questions").click(function () {
+        $(".drop-icon").toggleClass("down");
+      });
+
+      $(".drop-icon").click(function () {
+        $(this).toggleClass("down");
+      });
+      $(".lb-collapse").click(function () {
+        $(".drop-icon").toggleClass("down");
+      });
+      $("#drop-img").click(function () {
+        $(".drop-icon").toggleClass("down");
+      });
+      $("#see-more-parent").click(function () {
+        $("#see-more").toggle();
+      });
+      $("#see-more").click(function () {
+        $("#see-more").toggle();
+        $(".drop-icon").toggleClass("down");
       });
     </script>
 
