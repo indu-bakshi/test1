@@ -18,6 +18,7 @@ app.get("/", function (req, res) {
   var company = undefined;
   var tempid = undefined;
   var cohort = undefined;
+
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
@@ -41,6 +42,7 @@ app.get("/candidate-profile", function (req, res) {
   var company = undefined;
   var tempid = undefined;
   var cohort = undefined;
+
   if (req.query.userData) {
     userData = req.query.userData;
     company = req.query.company;
