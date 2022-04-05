@@ -117,3 +117,12 @@ input:focus {
 button:focus {
   outline: none;
 }
+
+#help-icon-top {
+  background-color: #e9446f;
+  border: none;
+  color: #fbfbfb;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}

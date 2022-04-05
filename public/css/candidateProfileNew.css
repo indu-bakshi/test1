@@ -1175,3 +1175,10 @@
 #accordionEx {
   cursor: pointer;
 }
+.navbar-dark {
+  justify-content: space-between;
+}
+#accordionCandidateWrapper {
+  width: 100%;
+  padding-right: 55px;
+}
