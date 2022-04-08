@@ -158,16 +158,14 @@
 }
 
 .overview-btn-icon img {
-  width: 8px;
-  height: 6px;
-  margin-bottom: 12px;
+  width: 15px;
 }
 
 .overview-btn-label {
   font-size: 11px;
   color: #33475b;
   opacity: 1;
-  margin-right: 9px;
+  margin-right: -6px;
   line-height: 14px;
 }
 
@@ -454,10 +452,6 @@
 
 .overview-btn-icon-red {
   background-color: #f93571;
-}
-
-.overview-btn-icon-green {
-  background-color: #29b500;
 }
 
 .candidate-experience .overview-btn-icon {
