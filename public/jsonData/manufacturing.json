@@ -3,7 +3,8 @@
     "firstName": "Kartik",
     "lastName": "Singh",
     "phone": "+91 86XXXXXXX6",
-    "email": "ka******@gmail.com"
+    "email": "ka******@gmail.com",
+    "gender": "male"
   },
   "candidateDetailsTopLeft": [
     {
@@ -808,5 +809,5 @@
       "color": "white"
     }
   ],
-  "resumeName": "fullstackResume"
+  "resumeName": "manufacturingResume"
 }

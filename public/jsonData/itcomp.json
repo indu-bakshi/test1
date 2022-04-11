@@ -3,7 +3,8 @@
     "firstName": "Rahul",
     "lastName": "Jha",
     "phone": "+91 86XXXXXXX6",
-    "email": "ra******14@gmail.com"
+    "email": "ra******14@gmail.com",
+    "gender": "male"
   },
   "candidateDetailsTopLeft": [
     {

@@ -107,10 +107,18 @@
             <div class="row overview-details">
               <div class="col-lg-1 p-0 overview-info-shortcuts">
                 <div class="display-picture">
-                  <img
-                    src="images/new-candidate-profile-display.png"
+                  <% if (profileData.generalInfo.gender === "female") { %>
+                    <img
+                    src="images/female.png"
                     alt="User Image"
                   />
+                <% } else { %>
+                  <img
+                  src="images/male.png"
+                  alt="User Image"
+                />
+                <% } %> 
+                  
                 </div>
               </div>
               <div class="col-lg-10 p-0 overview-info-details">

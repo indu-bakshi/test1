@@ -28,7 +28,7 @@ app.get("/", function (req, res) {
   } else {
     fileName = path.join(__dirname, "/public/jsonData/itComp.json");
   }
-  console.log(req.query.profileBranch);
+
   fs.readFile(fileName, (err, data) => {
     var jsonData = data;
     var jsonParsed = JSON.parse(jsonData);
